@@ -17,5 +17,9 @@ export class RestApiStack extends core.Stack {
     restApi.root
       .addResource('hello')
       .addMethod('GET', new apigateway.MockIntegration({}));
+
+    restApi.root
+      .addResource('hellohello')
+      .addMethod('GET', new apigateway.MockIntegration({}));
   }
 }
