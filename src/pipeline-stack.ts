@@ -1,6 +1,5 @@
 import * as cdk from 'aws-cdk-lib';
 import * as pipelines from 'aws-cdk-lib/pipelines';
-import { ManualApprovalStep } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
 import { RestApiStack } from './rest-api-stack';
 
@@ -38,7 +37,7 @@ export class PipelineStack extends cdk.Stack {
           stackSteps: [
             {
               stack: stage.backendStack,
-              changeSet: [new ManualApprovalStep('approve')],
+              changeSet: [new pipelines.ManualApprovalStep('approve')],
             },
           ],
         });
