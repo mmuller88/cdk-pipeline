@@ -12,7 +12,14 @@ ACCOUNT_STAGING_ID=...
 yarn cdk bootstrap aws://$ACCOUNT_STAGING_ID/us-east-1 --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess --trust $ACCOUNT_DEV_ID --trust-for-lookup $ACCOUNT_DEV_ID
 ```
 
+For deploying the pipeline:
+
+```bash
+yarn cdk deploy "restapi-pipeline" --require-approval never
+```
+
 For deploying the stack directly. Please don't use if you know what you're doing!
+
 
 ```bash
 STAGE=prod
