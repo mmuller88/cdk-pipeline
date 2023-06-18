@@ -8,8 +8,8 @@ Deploy a simple AWS ApiGateway.
 ACCOUNT_DEV_ID=981237193288
 yarn cdk bootstrap --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess aws://$ACCOUNT_DEV_ID/us-east-1
 
-ACCOUNT_STAGING_ID=...
-yarn cdk bootstrap aws://$ACCOUNT_STAGING_ID/us-east-1 --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess --trust $ACCOUNT_DEV_ID --trust-for-lookup $ACCOUNT_DEV_ID
+ACCOUNT_PROD_ID=386918889505
+yarn cdk bootstrap aws://$ACCOUNT_PROD_ID/us-east-1 --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess --trust $ACCOUNT_DEV_ID --trust-for-lookup $ACCOUNT_DEV_ID
 ```
 
 For deploying the pipeline:

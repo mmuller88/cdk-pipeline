@@ -5,7 +5,7 @@ import { RestApiStack } from './rest-api-stack';
 
 const stages = [
   { stage: 'dev', account: '981237193288', manualApproval: false } as const,
-  // { stage: 'prod', account: '...', manualApproval: true } as const,
+  { stage: 'prod', account: '386918889505', manualApproval: true } as const,
 ];
 
 export class PipelineStack extends cdk.Stack {
@@ -13,7 +13,7 @@ export class PipelineStack extends cdk.Stack {
     super(scope, id, props);
 
     const pipeline = new pipelines.CodePipeline(this, 'Pipeline', {
-      // crossAccountKeys: true,
+      crossAccountKeys: true,
       synth: new pipelines.ShellStep('Synth', {
         input: pipelines.CodePipelineSource.gitHub(
           'mmuller88/cdk-pipeline',
