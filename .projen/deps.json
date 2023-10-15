@@ -21,7 +21,7 @@
     },
     {
       "name": "aws-cdk",
-      "version": "^2.84.0",
+      "version": "^2.101.0",
       "type": "build"
     },
     {
@@ -89,7 +89,11 @@
     },
     {
       "name": "aws-cdk-lib",
-      "version": "^2.84.0",
+      "version": "^2.101.0",
+      "type": "runtime"
+    },
+    {
+      "name": "aws-lambda",
       "type": "runtime"
     },
     {

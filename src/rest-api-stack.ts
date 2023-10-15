@@ -1,5 +1,6 @@
 import * as core from 'aws-cdk-lib';
 import * as apigateway from 'aws-cdk-lib/aws-apigateway';
+import * as lambdajs from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
 
 export interface RestApiStackProps extends core.StackProps {
@@ -14,12 +15,10 @@ export class RestApiStack extends core.Stack {
       restApiName: `RestApi-${props.stage}`,
     });
 
-    restApi.root
-      .addResource('hello')
-      .addMethod('GET', new apigateway.MockIntegration({}));
+    const helloLambda = new lambdajs.NodejsFunction(this, 'lambda');
 
     restApi.root
-      .addResource('hellohello')
-      .addMethod('GET', new apigateway.MockIntegration({}));
+      .addResource('hello')
+      .addMethod('GET', new apigateway.LambdaIntegration(helloLambda));
   }
 }

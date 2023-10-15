@@ -17,6 +17,7 @@
     ".projen/tasks.json",
     "cdk.json",
     "LICENSE",
+    "src/rest-api-stack-function.ts",
     "tsconfig.dev.json",
     "tsconfig.json"
   ],

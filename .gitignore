@@ -53,3 +53,4 @@ junit.xml
 /cdk.out/
 .cdk.staging/
 .parcel-cache/
+!/src/rest-api-stack-function.ts
