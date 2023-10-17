@@ -22,7 +22,6 @@ yarn cdk deploy "restapi-pipeline" --require-approval never
 
 For deploying the stack directly. Please don't use if you know what you're doing!
 
-
 ```bash
 STAGE=prod
 yarn cdk deploy "restapi-pipeline/${STAGE:-dev}/RestApiStack" --require-approval never
